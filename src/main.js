@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         BANGUME
+// @name         BANGUMI: 高清封面/首页简化
 // @namespace    xavierror
 // @version      1.1.3
 // @description  高清封面图/首页排版简化
