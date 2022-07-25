@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BANGUMI: 高清封面/首页简化
 // @namespace    xavierror
-// @version      1.0.1
+// @version      1.0.2
 // @description  高清封面图/首页排版简化
 // @author       xavierror
 // @match        *://*bgm.tv/*
@@ -13,12 +13,13 @@
 
 import IndexPage from "./pages/index";
 import SubjectPage from "./pages/subject";
+import CalendarPage from "./pages/calendar";
 
-setTimeout(run, 1000)
+(async () => {
+  const path = location.pathname
 
-const path = location.pathname
+  await new Promise(resolve => setTimeout(resolve, 1500))
 
-function run() {
   // 首页
   if (path === '/') {
     IndexPage()
@@ -26,11 +27,12 @@ function run() {
 
   // 每日放送
   if (path === '/calendar') {
-    console.log('每日放送');
+    CalendarPage()
   }
 
   // 详情页
   if (path.search('/subject/') === 0) {
     SubjectPage()
   }
-}
+
+})()
