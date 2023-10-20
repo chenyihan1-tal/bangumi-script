@@ -1,31 +1,16 @@
-const SubjectPage = () => {
-  console.log("详情页");
+export default () => {
+  const styleElement = document.createElement("style");
+  styleElement.innerHTML =
+    "#ChartWarpper,#columnInSubjectA div.rr,#panelInterestWrapper div[rel='v:rating'],#columnSubjectHomeB .subject_section:nth-last-child(-n+4){display:none!important}";
+  document.head.appendChild(styleElement);
 
-  const cover = document.querySelector(
-    "#bangumiInfo > div > div:nth-child(1) > a > img"
-  );
-  if (cover) {
-    cover.style.width = "100%";
-    cover.setAttribute(
-      "src",
-      cover.getAttribute("src").replace(/\/c\//, "/l/")
-    );
-  }
-
-  const title = document.querySelector("#headerSubject > h1 > a");
-  if (title) {
-    if (title.innerHTML !== title.title) {
-      title.innerHTML = `${title.title}<br />${title.innerHTML}`;
-    }
-  }
-
-  // 吐槽箱
-  if (!location.pathname.endsWith("/comments")) {
-    document.querySelector("#comment_box")?.parentElement?.remove?.();
-  }
-
-  // 分享区
-  document.querySelector(".shareBtn")?.remove?.();
+  // const timer = setTimeout(() => {
+  //   clearTimeout(timer);
+  //   const removeTitles = ["评论", "吐槽箱", "讨论版"];
+  //   const elements = document.querySelectorAll(`h2.subtitle`);
+  //   for (const element of elements) {
+  //     if (removeTitles.includes(element.innerText))
+  //       element.parentElement.remove();
+  //   }
+  // }, 500);
 };
-
-export default SubjectPage;

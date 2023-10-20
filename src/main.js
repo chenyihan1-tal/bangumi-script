@@ -1,38 +1,28 @@
-// ==UserScript==
-// @name         BANGUMI: 高清封面/首页简化
-// @namespace    xavierror
-// @version      1.0.2
-// @description  高清封面图/首页排版简化
-// @author       xavierror
-// @match        *://*bgm.tv/*
-// @match        *://*bangumi.tv/*
-// @icon         https://bgm.tv/img/ico/ico_ios.png
-// @grant        none
-// @run-at       document-end
-// ==/UserScript==
-
+import EpPage from "./pages/ep";
 import IndexPage from "./pages/index";
 import SubjectPage from "./pages/subject";
-import CalendarPage from "./pages/calendar";
+import CharacterPage from "./pages/character";
 
-(async () => {
-  const path = location.pathname
-
-  await new Promise(resolve => setTimeout(resolve, 1500))
+(() => {
+  const path = location.pathname;
 
   // 首页
-  if (path === '/') {
-    IndexPage()
-  }
-
-  // 每日放送
-  if (path === '/calendar') {
-    CalendarPage()
+  if (path === "/") {
+    IndexPage();
   }
 
   // 详情页
-  if (path.search('/subject/') === 0) {
-    SubjectPage()
+  if (path.search("/subject/") === 0) {
+    SubjectPage();
   }
 
-})()
+  // 人物页
+  if (path.search("/character/") === 0) {
+    CharacterPage();
+  }
+
+  // 章节页
+  if (path.search("/ep/") === 0) {
+    EpPage();
+  }
+})();
