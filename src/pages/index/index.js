@@ -56,6 +56,34 @@ const IndexPage = () => {
       margin-left: 15px;
       line-height: unset;
   }
+  ul.prg_list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  ul.prg_list li {
+    margin: 0 4px 4px 0;
+  }
+  .tinyMode ul.prg_list a {
+    box-sizing: border-box;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 20px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .tinyMode ul.prg_list a:hover {
+    border: 1px solid #000;
+    margin: 0;
+    padding: 0;
+    width: 20px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   `
   
   const styleElement = document.createElement('style')
@@ -68,15 +96,15 @@ const IndexPage = () => {
     if (e.getAttribute('data-subject-name-cn')) e.innerHTML = e.getAttribute('data-subject-name-cn')
   })
 
-  const cluetip = document.querySelector('#cluetip');
+//   const cluetip = document.querySelector('#cluetip');
 
-const a = document.querySelectorAll('.load-epinfo[title]');
+// const a = document.querySelectorAll('.load-epinfo[title]');
 
-a.forEach((link) => {
-    link.addEventListener('mouseout', () => {
-        cluetip.style.display = 'none';
-    });
-})
+// a.forEach((link) => {
+//     link.addEventListener('mouseout', () => {
+//         cluetip.style.display = 'none';
+//     });
+// })
 };
 
 export default IndexPage;
