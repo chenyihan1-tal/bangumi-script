@@ -1,4 +1,4 @@
-const SubjectPage = () => {
+export default () => {
   console.log("详情页");
 
   const subjectSection = document.querySelectorAll(".subject_section");
@@ -14,7 +14,4 @@ const SubjectPage = () => {
       title.innerHTML = `${title.title}<br />${title.innerHTML}`;
     }
   }
-
-};
-
-export default SubjectPage;
+};;

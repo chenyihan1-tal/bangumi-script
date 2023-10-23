@@ -13,7 +13,6 @@ const IndexPage = () => {
   
   document.querySelectorAll('.infoWrapper span.avatarNeue').forEach((el) => {
       el.parentNode.style.border = '1px solid #eee'
-      // 将el换成img
       const img = document.createElement('img')
       const src = el.style.backgroundImage.match(/url\("(.*)"\)/)[1]
       img.src = src.replace('/m/','/l/')
@@ -66,10 +65,18 @@ const IndexPage = () => {
   // 转成中文
   const titles = document.querySelectorAll('.epGird > .tinyHeader > .textTip')
   titles.forEach(e => {
-    if (e.getAttribute('data-subject-name-cn')) {
-      e.innerHTML = e.getAttribute('data-subject-name-cn')
-    }
+    if (e.getAttribute('data-subject-name-cn')) e.innerHTML = e.getAttribute('data-subject-name-cn')
   })
+
+  const cluetip = document.querySelector('#cluetip');
+
+const a = document.querySelectorAll('.load-epinfo[title]');
+
+a.forEach((link) => {
+    link.addEventListener('mouseout', () => {
+        cluetip.style.display = 'none';
+    });
+})
 };
 
 export default IndexPage;
