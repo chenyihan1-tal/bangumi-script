@@ -10,5 +10,11 @@
     "prettier": "^3.3.3",
     "vite": "^3.0.2"
   },
-  "prettier": {}
+  "prettier": {
+    "printWidth": 180,
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "jsxSingleQuote": true,
+    "arrowParens": "avoid"
+  }
 }
